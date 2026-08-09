@@ -831,7 +831,7 @@ body.no-motion .hero-r .badge .pulse::after, body.no-motion .scroll-cue .ln::aft
   }
   langButtons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
   var saved = 'sv';
-  try { saved = localStorage.getItem(LS_LANG) || (document.cookie.match(/(?:^|; )hemreform_lang=([^;]*)/) || [])[1] || 'sv'; } catch (e) {}
+  try { saved = (document.cookie.match(/(?:^|; )hemreform_lang=([^;]*)/) || [])[1] || localStorage.getItem(LS_LANG) || 'sv'; } catch (e) {}
   setLang(saved);
 
   /* ---------- marquee seamless loop ---------- */
