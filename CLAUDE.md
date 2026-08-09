@@ -137,7 +137,9 @@ The footer lists all 8 services. If services change, update the footer on all pa
 
 ## Google Analytics
 
-Tracking ID: `G-YHHZXMK0M6` — installed on all pages via Google Tag Manager (gtag.js).
+Tracking ID: `G-LPFDN5P7PY` — installed on all pages via Google Tag Manager (gtag.js).
+
+Each city site has its own GA4 property, so the ID differs per repo. Do not copy it between repos.
 Do not remove or duplicate the `<script async src="…gtag/js?id=…">` block.
 
 ---
