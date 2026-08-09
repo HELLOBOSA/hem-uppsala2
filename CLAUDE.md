@@ -144,30 +144,6 @@ Do not remove or duplicate the `<script async src="…gtag/js?id=…">` block.
 
 ---
 
----
-
-## Cookie banner and analytics
-
-The banner is shown, but tracking does not depend on the visitor's choice. This
-is a deliberate decision by the owner, not a bug. Two switches control it, one
-per page:
-
-- `WB_BANNER_ENABLED` (`true`) renders the banner, which closes for good once
-  the visitor accepts or rejects.
-- `WB_CONSENT_ENFORCED` (`false`) decides whether tracking waits for that choice
-  and obeys it.
-
-To make the choice binding, set `WB_CONSENT_ENFORCED` to `true` on every page.
-Nothing else needs to change; the denied default, the consent update on click
-and the stored-choice restore are all already wired.
-
-Full procedure, the storage keys per brand, and the two defects that must not be
-reintroduced: `dna/websites/CONSENT-AND-ANALYTICS.md`.
-
-Do not call `gtag('consent','update', ...)` directly. Every update goes through
-the guarded `pushConsent` helper, which is what keeps Reject from switching
-measurement off while enforcement is disabled.
-
 ## Notes
 
 - The before/after image slider uses `setPointerCapture` so dragging outside the element
